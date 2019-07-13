@@ -49,16 +49,16 @@ def Compare(textSaid, text_to_read):
 
 
 
-#fileName = getFile()
+fileName = getFile()
 
-#with open(fileName,'r') as file:
- #  data = file.read()
-  #    data = data.lower()
+with open(fileName,'r') as file:
+    data = file.read()
+    data = data.lower()
 
-#textSaid = Record(data)
-#Compare(textSaid,data)
-#print(data)
-#print(textSaid)
+textSaid = Record(data)
+Compare(textSaid,data)
+print(data)
+print(textSaid)
 
 
 
