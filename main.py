@@ -23,15 +23,15 @@ def test():
 @app.route('/lineByLine', methods=["GET","POST"])
 def lineByLine():
 
-    fileName = getFile()
-    with open(fileName, 'r') as file:
-        data = file.read()
-        dataLower = data.lower()
+    #fileName = getFile()
+    #with open(fileName, 'r') as file:
+    #    data = file.read()
+    #    dataLower = data.lower()
 
     if request.method=="POST":  # If post request i.e. client clicks
         clientSaid = Record(data)
         return render_template('lineByLine.html', textSaid = clientSaid)
 
     # OTHERWISE
-    
-    return render_template('lineByLine.html', textSaid="", textToRead = data)
+    return render_template('lineByLine.html', textSaid="")
+    #return render_template('lineByLine.html', textSaid="", textToRead = data)

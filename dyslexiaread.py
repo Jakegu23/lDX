@@ -10,9 +10,9 @@ def getFile():
 
 def createSentence():
     read = open(fileName)
-        while True: 
-            line = read.readline()
-            print(line)
-        if not line:
-            break 
+    while True: 
+        line = read.readline()
+        print(line)
+    if not line:
+        break 
     read.close()
