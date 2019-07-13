@@ -15,6 +15,9 @@ def getFile():
 
     return fileName
 
+def diff(first, second):
+        second = set(second)
+        return [item for item in first if item not in second]
 
 def Record(text_to_read):
     r = sr.Recognizer()
@@ -27,16 +30,17 @@ def Record(text_to_read):
             #print("You said : {}".format(text))
         except:
             print("Sorry could not recognize what you said")
+            textSaid = "Sorry could not recognize what you said"
 
     return textSaid
 
 def Compare(textSaid, text_to_read):
     
     import difflib
-    s1cnt = Counter(textSaid)
-    s2cnt = Counter(text_to_read)
+    s1cnt = textSaid.split()
+    s2cnt = text_to_read.split()
     
-    print(f"Differenc: {s1cnt - s2cnt}")
+    print(f"Difference: {diff(s1cnt,s2cnt)}")
 
     common_ratio = difflib.SequenceMatcher(None, textSaid, text_to_read).ratio()
     print ('%.1f%% of words common.' % (100*common_ratio))
