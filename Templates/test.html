@@ -1,12 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dystextia</title>
+    <!-- <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='testStyle.css')}}"> -->
+    <link rel="stylesheet" type="text/css" href="static/style.css">
 
-{% block body %}
+</head>
 
-    <>
+<div id="sideOptions">
+    <div class="toggleColourScheme">
+        change colour
+    </div>
+    <div class="toggleFontUp">
+        font up
+    </div>
+    <div class="toggleFontDown">
+        font down
+    </div>
+</div>
 
-    <div id="testText">
+<div id="readText">
+    <div class="secondaryRow">
+    <p>{{preLine}}</p>
+    </div>
 
+    <div class="mainRow">
+    <p>{{currLine}}</p>
+    </div>
 
-    <form method="POST">
-        <input class="button" type="submit" name="btnOrderConfirm" value="Confirm Order">
-    </form>
-{% endblock %}
+    <div class="secondaryRow">
+    <p>{{postLine}}</p>
+    </div>
+</div>
+</html>
